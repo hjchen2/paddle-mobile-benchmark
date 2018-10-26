@@ -2,11 +2,11 @@
 
 # convert caffe model to fluid model
 python caffe-fluid/convert.py \
-  --caffemodel=./googlenet/bvlc_googlenet.caffemodel \
+  --caffemodel=../caffe_models/googlenet/bvlc_googlenet.caffemodel \
   --data-output-path=./output.npy \
   --code-output-path=./output.py \
-  ./googlenet/deploy_remove_lrn.prototxt
+  ../caffe_models/googlenet/deploy_remove_lrn.prototxt
 
-python ./output.py ./output.npy ./fluid loss3_classifier
+python ./output.py ./output.npy ./fluid_googlenet_v1 loss3_classifier
 
 

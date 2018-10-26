@@ -75,10 +75,7 @@ class MyNet(object):
         fluid.io.save_inference_model(
             fluid_path, [input_name],
             output_vars,
-            exe,
-            main_program=None,
-            model_filename=model_filename,
-            params_filename=params_filename)
+            exe)
         return 0
 
 
