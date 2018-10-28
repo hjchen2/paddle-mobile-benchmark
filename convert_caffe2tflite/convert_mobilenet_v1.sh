@@ -31,7 +31,7 @@ mkdir -p ../tflite_models/mobilenet_v1
   --input_shape="1,224,224,3" \
   --input_array=input \
   --output_array=MobilenetV1/Predictions/Reshape_1
-#  --output_array=MobilenetV2/Predictions/Reshape_1
+#  --output_array=MobilenetV1/Predictions/Reshape_1
 
 # uint8
 ../../tensorflow/bazel-bin/tensorflow/contrib/lite/toco/toco \
@@ -44,4 +44,4 @@ mkdir -p ../tflite_models/mobilenet_v1
   --output_array=MobilenetV1/Predictions/Reshape_1 \
   --default_ranges_min=0.0 \
   --default_ranges_max=255.0
-#  --output_array=MobilenetV2/Predictions/Reshape_1
+#  --output_array=MobilenetV1/Predictions/Reshape_1

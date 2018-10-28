@@ -25,7 +25,7 @@ from utility import add_arguments, print_arguments
 
 parser = argparse.ArgumentParser(description=__doc__)
 add_arg = functools.partial(add_arguments, argparser=parser)
-add_arg('use_gpu', bool, True, "Whether to use GPU or not.")
+add_arg('use_gpu', bool, False, "Whether to use GPU or not.")
 add_arg('model', str, None, "Pretrained model path.")
 add_arg('input_image', str, None, "Image to Predict")
 add_arg('input_ops', str, None, "Input ops.")
