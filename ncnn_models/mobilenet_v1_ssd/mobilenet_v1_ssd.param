@@ -1,5 +1,7 @@
 7767517
-196 220
+197 220
+Input            data             0 1 data 0=300 1=300 2=3
+Split            splitncnn_0      1 7 data data_splitncnn_0 data_splitncnn_1 data_splitncnn_2 data_splitncnn_3 data_splitncnn_4 data_splitncnn_5 data_splitncnn_6
 Convolution      conv0            1 1 data_splitncnn_6 conv0 0=32 1=3 2=1 3=2 4=1 5=0 6=864
 BatchNorm        conv0/bn         1 1 conv0 conv0_conv0/bn 0=32
 Scale            conv0/scale      1 1 conv0_conv0/bn conv0_conv0/scale 0=32 1=1
@@ -92,7 +94,7 @@ Convolution      conv11           1 1 conv11/dw_conv11/dw/relu conv11 0=512 1=1 
 BatchNorm        conv11/bn        1 1 conv11 conv11_conv11/bn 0=512
 Scale            conv11/scale     1 1 conv11_conv11/bn conv11_conv11/scale 0=512 1=1
 ReLU             conv11/relu      1 1 conv11_conv11/scale conv11_conv11/relu
-Split            splitncnn_0      1 4 conv11_conv11/relu conv11_conv11/relu_splitncnn_0 conv11_conv11/relu_splitncnn_1 conv11_conv11/relu_splitncnn_2 conv11_conv11/relu_splitncnn_3
+Split            splitncnn_1      1 4 conv11_conv11/relu conv11_conv11/relu_splitncnn_0 conv11_conv11/relu_splitncnn_1 conv11_conv11/relu_splitncnn_2 conv11_conv11/relu_splitncnn_3
 ConvolutionDepthWise conv12/dw        1 1 conv11_conv11/relu_splitncnn_3 conv12/dw 0=512 1=3 2=1 3=2 4=1 5=0 6=4608 7=512
 BatchNorm        conv12/dw/bn     1 1 conv12/dw conv12/dw_conv12/dw/bn 0=512
 Scale            conv12/dw/scale  1 1 conv12/dw_conv12/dw/bn conv12/dw_conv12/dw/scale 0=512 1=1
@@ -109,7 +111,7 @@ Convolution      conv13           1 1 conv13/dw_conv13/dw/relu conv13 0=1024 1=1
 BatchNorm        conv13/bn        1 1 conv13 conv13_conv13/bn 0=1024
 Scale            conv13/scale     1 1 conv13_conv13/bn conv13_conv13/scale 0=1024 1=1
 ReLU             conv13/relu      1 1 conv13_conv13/scale conv13_conv13/relu
-Split            splitncnn_1      1 4 conv13_conv13/relu conv13_conv13/relu_splitncnn_0 conv13_conv13/relu_splitncnn_1 conv13_conv13/relu_splitncnn_2 conv13_conv13/relu_splitncnn_3
+Split            splitncnn_2      1 4 conv13_conv13/relu conv13_conv13/relu_splitncnn_0 conv13_conv13/relu_splitncnn_1 conv13_conv13/relu_splitncnn_2 conv13_conv13/relu_splitncnn_3
 Convolution      conv14_1         1 1 conv13_conv13/relu_splitncnn_3 conv14_1 0=256 1=1 2=1 3=1 4=0 5=0 6=262144
 BatchNorm        conv14_1/bn      1 1 conv14_1 conv14_1_conv14_1/bn 0=256
 Scale            conv14_1/scale   1 1 conv14_1_conv14_1/bn conv14_1_conv14_1/scale 0=256 1=1
@@ -118,7 +120,7 @@ Convolution      conv14_2         1 1 conv14_1_conv14_1/relu conv14_2 0=512 1=3 
 BatchNorm        conv14_2/bn      1 1 conv14_2 conv14_2_conv14_2/bn 0=512
 Scale            conv14_2/scale   1 1 conv14_2_conv14_2/bn conv14_2_conv14_2/scale 0=512 1=1
 ReLU             conv14_2/relu    1 1 conv14_2_conv14_2/scale conv14_2_conv14_2/relu
-Split            splitncnn_2      1 4 conv14_2_conv14_2/relu conv14_2_conv14_2/relu_splitncnn_0 conv14_2_conv14_2/relu_splitncnn_1 conv14_2_conv14_2/relu_splitncnn_2 conv14_2_conv14_2/relu_splitncnn_3
+Split            splitncnn_3      1 4 conv14_2_conv14_2/relu conv14_2_conv14_2/relu_splitncnn_0 conv14_2_conv14_2/relu_splitncnn_1 conv14_2_conv14_2/relu_splitncnn_2 conv14_2_conv14_2/relu_splitncnn_3
 Convolution      conv15_1         1 1 conv14_2_conv14_2/relu_splitncnn_3 conv15_1 0=128 1=1 2=1 3=1 4=0 5=0 6=65536
 BatchNorm        conv15_1/bn      1 1 conv15_1 conv15_1_conv15_1/bn 0=128
 Scale            conv15_1/scale   1 1 conv15_1_conv15_1/bn conv15_1_conv15_1/scale 0=128 1=1
@@ -127,7 +129,7 @@ Convolution      conv15_2         1 1 conv15_1_conv15_1/relu conv15_2 0=256 1=3 
 BatchNorm        conv15_2/bn      1 1 conv15_2 conv15_2_conv15_2/bn 0=256
 Scale            conv15_2/scale   1 1 conv15_2_conv15_2/bn conv15_2_conv15_2/scale 0=256 1=1
 ReLU             conv15_2/relu    1 1 conv15_2_conv15_2/scale conv15_2_conv15_2/relu
-Split            splitncnn_3      1 4 conv15_2_conv15_2/relu conv15_2_conv15_2/relu_splitncnn_0 conv15_2_conv15_2/relu_splitncnn_1 conv15_2_conv15_2/relu_splitncnn_2 conv15_2_conv15_2/relu_splitncnn_3
+Split            splitncnn_4      1 4 conv15_2_conv15_2/relu conv15_2_conv15_2/relu_splitncnn_0 conv15_2_conv15_2/relu_splitncnn_1 conv15_2_conv15_2/relu_splitncnn_2 conv15_2_conv15_2/relu_splitncnn_3
 Convolution      conv16_1         1 1 conv15_2_conv15_2/relu_splitncnn_3 conv16_1 0=128 1=1 2=1 3=1 4=0 5=0 6=32768
 BatchNorm        conv16_1/bn      1 1 conv16_1 conv16_1_conv16_1/bn 0=128
 Scale            conv16_1/scale   1 1 conv16_1_conv16_1/bn conv16_1_conv16_1/scale 0=128 1=1
@@ -136,7 +138,7 @@ Convolution      conv16_2         1 1 conv16_1_conv16_1/relu conv16_2 0=256 1=3 
 BatchNorm        conv16_2/bn      1 1 conv16_2 conv16_2_conv16_2/bn 0=256
 Scale            conv16_2/scale   1 1 conv16_2_conv16_2/bn conv16_2_conv16_2/scale 0=256 1=1
 ReLU             conv16_2/relu    1 1 conv16_2_conv16_2/scale conv16_2_conv16_2/relu
-Split            splitncnn_4      1 4 conv16_2_conv16_2/relu conv16_2_conv16_2/relu_splitncnn_0 conv16_2_conv16_2/relu_splitncnn_1 conv16_2_conv16_2/relu_splitncnn_2 conv16_2_conv16_2/relu_splitncnn_3
+Split            splitncnn_5      1 4 conv16_2_conv16_2/relu conv16_2_conv16_2/relu_splitncnn_0 conv16_2_conv16_2/relu_splitncnn_1 conv16_2_conv16_2/relu_splitncnn_2 conv16_2_conv16_2/relu_splitncnn_3
 Convolution      conv17_1         1 1 conv16_2_conv16_2/relu_splitncnn_3 conv17_1 0=64 1=1 2=1 3=1 4=0 5=0 6=16384
 BatchNorm        conv17_1/bn      1 1 conv17_1 conv17_1_conv17_1/bn 0=64
 Scale            conv17_1/scale   1 1 conv17_1_conv17_1/bn conv17_1_conv17_1/scale 0=64 1=1
@@ -145,7 +147,7 @@ Convolution      conv17_2         1 1 conv17_1_conv17_1/relu conv17_2 0=128 1=3 
 BatchNorm        conv17_2/bn      1 1 conv17_2 conv17_2_conv17_2/bn 0=128
 Scale            conv17_2/scale   1 1 conv17_2_conv17_2/bn conv17_2_conv17_2/scale 0=128 1=1
 ReLU             conv17_2/relu    1 1 conv17_2_conv17_2/scale conv17_2_conv17_2/relu
-Split            splitncnn_5      1 3 conv17_2_conv17_2/relu conv17_2_conv17_2/relu_splitncnn_0 conv17_2_conv17_2/relu_splitncnn_1 conv17_2_conv17_2/relu_splitncnn_2
+Split            splitncnn_6      1 3 conv17_2_conv17_2/relu conv17_2_conv17_2/relu_splitncnn_0 conv17_2_conv17_2/relu_splitncnn_1 conv17_2_conv17_2/relu_splitncnn_2
 Convolution      conv11_mbox_loc  1 1 conv11_conv11/relu_splitncnn_2 conv11_mbox_loc 0=12 1=1 2=1 3=1 4=0 5=1 6=6144
 Permute          conv11_mbox_loc_perm 1 1 conv11_mbox_loc conv11_mbox_loc_perm 0=3
 Flatten          conv11_mbox_loc_flat 1 1 conv11_mbox_loc_perm conv11_mbox_loc_flat

@@ -1,10 +1,9 @@
 name: "MobileNet-SSD"
-input: "data"
-input_shape {
-  dim: 1
-  dim: 3
-  dim: 300
-  dim: 300
+layer {
+  name: "data"
+  type: "Input"
+  top: "data"
+  input_param { shape: { dim: 1 dim: 3 dim: 300 dim: 300 } }
 }
 layer {
   name: "conv0"
