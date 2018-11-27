@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 Usage="
-  Usage: ./test_int8_android.sh project_root_path model_path image_path [thread_num] [optimize]\n
+  Usage: ./test_paddle_mobile.sh project_root_path model_path image_path [thread_num] [optimize]\n
   params: \n
     project_root_path: paddle-mobile root path, for example ../paddle-mobile.\n \
     model_path: pretrained model used in prediction, for example ./fluid_models/googlenet_v1.\n \
@@ -34,5 +34,4 @@ adb push ${project_root_path}/test/build/test-googlenet /data/local/tmp/bin/
 adb push ${image_path} /data/local/tmp/images/test_image_1x3x224x224_float
 adb push ${model_path} /data/local/tmp/models/googlenet
 
-adb shell "cd /data/local/tmp/bin; LD_LIBRARY_PATH=. ./test-googlenet ../models/googlenet \
-           ../images/test_image_1x3x224x224_float $thread_num $optimize"
+adb shell "cd /data/local/tmp/bin; LD_LIBRARY_PATH=. ./test-googlenet $thread_num $optimize"
