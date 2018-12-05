@@ -34,7 +34,7 @@ args = parser.parse_args()
 
 def NextOps(start, program):
   """
-  Get all next operators, return as operators list.
+  Get all next operators, return next operators as a list.
 
   Args:
       start(Operator): The start operator.
@@ -72,9 +72,8 @@ def RemoveFetchOp(program):
 
 def CorrectQuantOpName(program):
   """
-  Correct fake quantize and dequantize op name. Operators with fake dequantize
-  name will be renamed as dequantize, and with fake quantize name will be
-  renamed as quantize.
+  Correct fake quantize and dequantize op name. Operators named with fake dequantize
+  will be renamed as dequantize, and fake quantize will be renamed as quantize.
 
   Args:
       program(Program): The program which has all operators.
